@@ -55,9 +55,8 @@ def print_results(data, label=""):
         marker = ">> AI " if label == "AI" else "   HUM"
         print(f"  {marker} ({r['confidence']:.2f}) {s}")
 
-        if label == "AI":
-            for d in r.get("diagnostics", []):
-                print(f"              ^ {d['pattern']}: '{d['match']}' — {d['suggestion']}")
+        for d in r.get("diagnostics", []):
+            print(f"              ^ {d['pattern']}: '{d['match']}' — {d['suggestion']}")
 
     print()
 
